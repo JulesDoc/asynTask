@@ -7,6 +7,7 @@
 #include <vector>
 #include <sstream>
 #include <algorithm>
+#include <fstream>
 
 #include "task.h"
 #include "taskrandom.h"
@@ -14,9 +15,16 @@
 #include "taskloop.h"
 
 //Prototype declaration
+void showHelp();
 bool isInteger(const std::string & s);
 
-int main() {
+int main(int argc, char* argv[]) {
+
+	if (argc == 2 && std::string(argv[1]) == "--help"){
+		showHelp();
+		return EXIT_SUCCESS;
+	}
+
         std::once_flag flag1;
 	std::vector<Task*> vTasks;
 
@@ -130,4 +138,18 @@ inline bool isInteger(const std::string & s)//Taken from stackoverflow.com/quest
 	strtol(s.c_str(), &p, 10) ;
 
 	return (*p == 0) ;
+}
+void showHelp(){
+
+	std::string getcontent;
+	std::ifstream openfile ("../../help.txt");
+	if(openfile.is_open())
+	{
+		while(!openfile.eof())
+		{
+			getline(openfile, getcontent);
+			std::cout << getcontent << '\n';
+		}
+	}
+
 }

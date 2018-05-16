@@ -1,0 +1,30 @@
+
+
+"start" starts a task of default type (loop) and prints a confirmation msg with task ID
+"start <task_type_id>" (loop, random, sleep) start a task depending on the the type chosen
+"pause <task_id>" pause the task with the given id and print a confirmation message
+"resume <task_id>" resume task with the given id (if paused) and print a confirmation message
+"stop <task_id>" stop the task with the given id (if not stopped) and print a confirmation message
+"status" prints the id, the status (paused, running, stopped, completed). Prints also the task type ID.
+"status <task_id>" As above, but for a single task.
+"quit" gracefully shut down
+
+Example of use:
+
+**To execute the program
+user@local ~go_to_build_main/ $ ./myAppTask
+
+Enter an instruction: start
+Starting a new Task loop with ID = 0
+Enter an instruction: start random
+Starting a new Task random with ID = 1
+Enter an instruction: status
+----Status of Task type loop with ID 0 is: completed
+----Status of Task type random with ID 1 is: running
+Enter an instruction: pause 1
+The Task 2 is pause
+Enter an instruction:
+{...}
+Enter an instruction: quit
+
+
