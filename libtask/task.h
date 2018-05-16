@@ -13,14 +13,17 @@ protected:
 	int m_ID;
 	std::string m_state;
 	std::string m_type;
-	
+	bool m_quit;
+	bool m_ready;
+	bool m_finished;
+	std::thread* m_t1;	
 public:
         Task(std::string type);
-	virtual ~Task();
+	~Task();
 	void resume();
 	void pause();
 	void stop();
-
+	const int& getID() const;
 
 };
 
