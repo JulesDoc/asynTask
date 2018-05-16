@@ -61,7 +61,7 @@ TEST_F(MyTaskTest, testingStateChangeToStop){
 }
 
 //To test that stop is a final state
-TEST_F(MyTaskTest, testingStopFinalState)
+TEST_F(MyTaskTest, testingStopFinalState){
 	tsk->stop();
 	tsk->resume();
 	const char * str1 = tsk->getState().c_str();
