@@ -67,3 +67,4 @@ TEST_F(MyTaskTest, testingStopFinalState){
 	const char * str1 = tsk->getState().c_str();
 	EXPECT_STRNE("running", str1);
 }
+
