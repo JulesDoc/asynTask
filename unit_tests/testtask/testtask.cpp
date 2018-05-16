@@ -16,7 +16,6 @@ protected:
 	Task* tsk;
 };
 //Using EXPECT for tipical cases
-//Using ASSERT for edge cases
 
 //To check proper assignment of unique ID for each task
 TEST_F(MyTaskTest, testingTaskID){
@@ -67,4 +66,24 @@ TEST_F(MyTaskTest, testingStopFinalState){
 	const char * str1 = tsk->getState().c_str();
 	EXPECT_STRNE("running", str1);
 }
+//To test that a task is proper completed
+TEST_F(MyTaskTest, testingTaskCompleted){
+        tsk->funType();
+        const char * str1 = tsk->getState().c_str();
+        EXPECT_STREQ("completed", str1);
+}
+
+//To test that completed is a final state
+TEST_F(MyTaskTest, testingCompletedFinalState){
+        tsk->funType();
+        //Dummy task is super fast
+	tsk->stop();	
+	const char * str1 = tsk->getState().c_str();
+        EXPECT_STRNE("stopped", str1);
+}
+
+
+
+
+
 

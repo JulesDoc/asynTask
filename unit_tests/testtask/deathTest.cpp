@@ -11,15 +11,7 @@ void funError(){
 	exit(1);
 }
 
-void funOk(){
-	system("quit");
-}
 
-//Test that program quit properly
-TEST(test_DeathTest, testingQuitProgram){
-        EXPECT_EXIT(funError(), ::testing::ExitedWithCode(0), "");
-
-}
 //Test that program quit unexpectely
 TEST(test_DeathTest, testExitCode1){
 

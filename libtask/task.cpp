@@ -34,7 +34,7 @@ Task::Task(Task&& other){
 //Move assignment
 Task& Task::operator=(Task&& other){
 	if(&other == this)
-		return *this;
+	return *this;
 	m_ID = std::move(other.m_ID);
 	m_quit = std::move(other.m_quit);
 	m_state = std::move(other.m_state);
@@ -61,7 +61,7 @@ void Task::pause() {
 	if (m_state=="running"){
 
 		m_ready = false;
-		std::cout << "The Task "  << m_ID << " is pause" << '\n';
+		std::cout << "The Task "  << m_ID << " is paused" << '\n';
 		m_cv.notify_all();
 		m_state = "paused";
 	}
@@ -73,15 +73,19 @@ void Task::stop(){
 
 		m_state = "stopped";
 		std::cout << "The Task "  << m_ID << " is stopped" << '\n';
-		this->Task::~Task();
+		m_quit = true;
+	        m_ready = true;
+       	        m_cv.notify_all();
 	}
 	else std::cout << "Task with ID " << m_ID << " can't be stopped -- see status" << '\n';
 }
 
 void Task::funType(){
 //This method will be overrided by derived classes
-//Uncomment this if want to have feedback
-	/*std::cout << "Dummy Task: doing nothing" << '\n';*/
+//Comment this if dont  want to have feedback
+	std::cout << "Dummy Task: doing nothing" << '\n';
+	m_finished = true;
+	m_state = "completed";
 }
 
 const std::string& Task::getState() const{
@@ -113,9 +117,6 @@ const bool& Task::isFinished() const{
 Task::~Task(){
 //Resource acquisition is initialization.
 	//Avoid task get stuck if exception thrown or function return...
-	m_quit = true;
-	m_ready = true;
-	m_cv.notify_all();
 	if(m_t1 && m_t1->joinable()) m_t1->join();
 	delete m_t1;
 }
