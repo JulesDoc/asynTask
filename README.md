@@ -13,6 +13,7 @@ The CMake configuration will do most of the job for you, including googletest fr
 ```
 CMake 3.1 (or above)
 ```
+```
 gcc compiler 5.4.0 (or above)
 ```
 
@@ -21,9 +22,12 @@ gcc compiler 5.4.0 (or above)
 ```
 Unzip the $FOLDER.zip
 ```
+```
 cd $FOLDER; mkdir build; cmake ..; make
 ```
+```
 Find executable in folder/build/main (to run the example program)
+```
 ```
 Find executable in folder/build/unit_tests/testtask (to run the tests)
 ```
