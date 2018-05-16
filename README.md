@@ -20,16 +20,16 @@ gcc compiler 5.4.0 (or above)
 ## Installing and running
 
 ```
-Unzip the $FOLDER.zip
+unzip pix4d.zip
 ```
 ```
-cd $FOLDER; mkdir build; cmake ..; make
+cd pix4d; mkdir build; cd build; cmake ..; make
 ```
 ```
-Find executable in folder/build/main (to run the example program)
+Find executable in pix4d/build/main (to run the example program ./myTaskApp)
 ```
 ```
-Find executable in folder/build/unit_tests/testtask (to run the tests)
+Find executable in pix4d/build/unit_tests/testtask (to run the tests ./testtask)
 ```
 
 ## Running the tests
