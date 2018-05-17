@@ -31,17 +31,6 @@ Find executable in pix4d/build/main (to run the example program ./myTaskApp)
 ```
 ```
 Find executable in pix4d/build/unit_tests/testtask (to run the tests ./testtask)
-=======
-Unzip the $FOLDER.zip
-```
-```
-cd $FOLDER; mkdir build; cmake ..; make
-```
-```
-Find executable in folder/build/main (to run the example program)
-```
-```
-Find executable in folder/build/unit_tests/testtask (to run the tests)
 ```
 
 ## Running the tests
