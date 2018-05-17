@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-#Asynchronous task library
 =======
 # Asynchronous task library
->>>>>>> 308f349ade534f5fe0bf8c400026f00b5379ce39
 
 This program allows the user to manage a number of asynchronous task. It allows start, pause, resume and stop a task and it offers status of one or all tasks created by the user.
 
@@ -24,7 +21,6 @@ gcc compiler 5.4.0 (or above)
 ## Installing and running
 
 ```
-<<<<<<< HEAD
 unzip pix4d.zip
 ```
 ```
@@ -46,7 +42,6 @@ Find executable in folder/build/main (to run the example program)
 ```
 ```
 Find executable in folder/build/unit_tests/testtask (to run the tests)
->>>>>>> 308f349ade534f5fe0bf8c400026f00b5379ce39
 ```
 
 ## Running the tests
@@ -77,7 +72,5 @@ I used git for versioning. Check .git folder if needed.
 This project is licensed under the LGPL 3.0
 
 ## Acknowledgments
-<<<<<<< HEAD
 
 =======
->>>>>>> 308f349ade534f5fe0bf8c400026f00b5379ce39
