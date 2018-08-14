@@ -21,10 +21,10 @@ gcc compiler 5.4.0 (or above)
 ## Installing and running
 
 ```
-unzip pix4d.zip
+git clone https://github.com/JulesDoc/asynTask.git
 ```
 ```
-cd pix4d; mkdir build; cd build; cmake ..; make
+cd asynTask; mkdir build; cd build; cmake ..; make
 ```
 ```
 Find executable in pix4d/build/main (to run the example program ./myTaskApp)
